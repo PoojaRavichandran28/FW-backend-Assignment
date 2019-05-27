@@ -1,0 +1,15 @@
+{
+  "name": "fw-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "key-file-storage": "^2.1.5",
+    "object-sizeof": "^1.3.1"
+  }
+}
