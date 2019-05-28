@@ -1,10 +1,13 @@
 var keyFileStorage = require('key-file-storage')
 var sizeof = require('object-sizeof')
-module.exports.createFile = function (path, key, value) {
+
+module.exports.createFile = async function (path, key, value, limit) {
     path = path || __dirname
     var kfs = keyFileStorage(path)
     if(checkSize(String(key),value)) {
         return new Promise((resolve, reject) => {
+            value = JSON.parse(value)
+            value['time-to-live'] = limit
             key in kfs(), kfs((error, exists) => {
                 if (exists) {
                     throw new Error('key already exists')
